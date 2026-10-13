@@ -1,78 +1,22 @@
-<!-- index.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CYFR - Secure Node Access</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap');
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #0f1219; 
-            background-image: 
-                radial-gradient(circle at 15% 50%, rgba(29, 78, 216, 0.15), transparent 25%),
-                radial-gradient(circle at 85% 30%, rgba(220, 38, 38, 0.1), transparent 25%);
-            color: #D1D5DB; 
-        }
-        .tech-font { font-family: 'JetBrains Mono', monospace; }
-        .bg-grid {
-            background-size: 40px 40px;
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            z-index: -1;
-        }
-    </style>
-</head>
-<body class="h-screen flex items-center justify-center overflow-hidden relative">
-    <div class="bg-grid"></div>
-    <div class="w-full max-w-md bg-[#1c2230]/80 backdrop-blur-md p-8 rounded-2xl border border-gray-800 shadow-2xl relative z-10">
-        <div class="flex justify-between items-center mb-6">
-            <div class="flex items-center space-x-2 bg-green-900/20 border border-green-800/50 px-3 py-1 rounded-full">
-                <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span class="text-green-400 text-xs font-bold tracking-widest uppercase">End-to-End Encrypted</span>
-            </div>
-            <div class="flex items-center space-x-2 bg-blue-900/20 border border-blue-800/50 px-3 py-1 rounded-full">
-                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-                <span class="text-blue-400 text-xs font-bold tracking-widest uppercase">System Online</span>
-            </div>
-        </div>
-        <div class="text-center mb-8">
-            <h1 class="text-5xl font-extrabold text-white tracking-widest mb-2">CYFR<span class="text-blue-500">.</span></h1>
-            <p class="tech-font text-sm text-gray-400 tracking-widest font-semibold">CRYPTOGRAPHIC LEDGER</p>
-            <p class="text-xs text-gray-500 mt-2">Zero Disruption. Total Transparency.</p>
-        </div>
-        <form action="ui.html" method="GET" class="space-y-5" onsubmit="event.preventDefault(); window.location.href='ui.html';">
-            <div>
-                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Node Operator ID</label>
-                <input type="text" placeholder="Enter standard username..." class="w-full bg-[#131722] border border-gray-700 text-sm rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition text-white">
-            </div>
-            <div>
-                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Passphrase</label>
-                <input type="password" placeholder="••••••••••••" class="w-full bg-[#131722] border border-gray-700 text-sm rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition text-white tech-font tracking-widest">
-            </div>
-            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded-lg transition duration-200 shadow-lg shadow-blue-500/30 mt-2">
-                AUTHENTICATE & SIGN IN
-            </button>
-        </form>
-        <div class="relative flex items-center py-6">
-            <div class="flex-grow border-t border-gray-700"></div>
-            <span class="flex-shrink-0 mx-4 text-gray-500 text-xs font-semibold tracking-widest">OR SECURE LOGIN VIA</span>
-            <div class="flex-grow border-t border-gray-700"></div>
-        </div>
-        <div class="grid grid-cols-2 gap-4 mb-6">
-            <button class="flex flex-col items-center justify-center p-4 bg-[#131722] border border-gray-700 hover:border-blue-500 rounded-xl transition group">
-                <svg class="w-6 h-6 text-gray-400 group-hover:text-blue-400 mb-2 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path></svg>
-                <span class="text-xs font-bold text-gray-400 group-hover:text-blue-400 text-center">USE HARDWARE<br>KEY (PKI)</span>
-            </button>
-            <button class="flex flex-col items-center justify-center p-4 bg-[#131722] border border-gray-700 hover:border-green-500 rounded-xl transition group">
-                <svg class="w-6 h-6 text-gray-400 group-hover:text-green-400 mb-2 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm14 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"></path></svg>
-                <span class="text-xs font-bold text-gray-400 group-hover:text-green-400 text-center">TAP QR /<br>NFC ID</span>
-            </button>
-        </div>
-    </div>
-</body>
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sign in · CYFR Blockchain Middleware</title><script>try{document.documentElement.dataset.theme=localStorage.getItem("cyfr_theme")||""}catch(e){}</script><link rel="stylesheet" href="assets/app.css"></head>
+<body class="login">
+<main class="login-card">
+<div class="brand"><span class="logo">C</span><div><b>CYFR</b><small>Security Solutions</small></div></div>
+<h1>Sign in to your office workspace</h1>
+<p class="muted">Demo environment. Any credentials will work.</p>
+<form id="f">
+<label>Office account<input id="u" value="ito.admin@nagacity.gov.ph" autocomplete="off"></label>
+<label>Password<input id="p" type="password" value="demo-password"></label>
+<button class="btn primary block">Sign in</button>
+<button type="button" class="btn block" id="pki">Use PKI certificate</button>
+</form>
+<p class="fine">Only record fingerprints leave your office. Personal data is never written to a blockchain.</p>
+</main>
+<aside class="login-side"><h2>Tamper-evident records.<br>No migration.</h2>
+<p>CYFR adds blockchain-grade integrity to the databases your office already runs.</p>
+<ul><li>Works with MySQL, MariaDB and MS Access</li><li>Keeps working through power and internet outages</li><li>Anchors to eGovChain, with Ethereum, Solana and Cardano on the roadmap</li></ul></aside>
+<script>
+document.getElementById('f').onsubmit=e=>{e.preventDefault();sessionStorage.setItem('cyfr_user',document.getElementById('u').value||'ito.admin');location.href='app.html#/overview'};
+document.getElementById('pki').onclick=()=>{sessionStorage.setItem('cyfr_user','ito.admin@nagacity.gov.ph');location.href='app.html#/overview'};
+</script></body></html>

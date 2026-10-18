@@ -1,12 +1,12 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Sign in · CYFR Blockchain Middleware</title><script>try{document.documentElement.dataset.theme=localStorage.getItem("cyfr_theme")||""}catch(e){}</script><link rel="stylesheet" href="assets/app.css"></head>
 <body class="login">
-<main class="login-card">
+<main class="login-card"><div class="proto" style="margin:-56px -48px 32px;padding:6px">Prototype · sample data</div>
 <div class="brand"><span class="logo">C</span><div><b>CYFR</b><small>Security Solutions</small></div></div>
 <h1>Sign in to your office workspace</h1>
 <p class="muted">Demo environment. Any credentials will work.</p>
 <form id="f">
-<label>Office account<input id="u" value="ito.admin@nagacity.gov.ph" autocomplete="off"></label>
+<label>Office account<input id="u" value="admin@example.gov.ph" autocomplete="off"></label>
 <label>Password<input id="p" type="password" value="demo-password"></label>
 <button class="btn primary block">Sign in</button>
 <button type="button" class="btn block" id="pki">Use PKI certificate</button>
@@ -15,8 +15,8 @@
 </main>
 <aside class="login-side"><h2>Tamper-evident records.<br>No migration.</h2>
 <p>CYFR adds blockchain-grade integrity to the databases your office already runs.</p>
-<ul><li>Works with MySQL, MariaDB and MS Access</li><li>Keeps working through power and internet outages</li><li>Anchors to eGovChain, with Ethereum, Solana and Cardano on the roadmap</li></ul></aside>
+<ul><li>Designed for MySQL and MariaDB. MS Access is a stretch target</li><li>Keeps working through power and internet outages</li><li>Prototype anchors to a simulated test network. eGovChain is the target, with access pending</li></ul></aside>
 <script>
 document.getElementById('f').onsubmit=e=>{e.preventDefault();sessionStorage.setItem('cyfr_user',document.getElementById('u').value||'ito.admin');location.href='app.html#/overview'};
-document.getElementById('pki').onclick=()=>{sessionStorage.setItem('cyfr_user','ito.admin@nagacity.gov.ph');location.href='app.html#/overview'};
+document.getElementById('pki').onclick=()=>{sessionStorage.setItem('cyfr_user','admin@example.gov.ph');location.href='app.html#/overview'};
 </script></body></html>
